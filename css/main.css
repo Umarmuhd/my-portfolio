@@ -103,6 +103,23 @@ nav.menu-btn ul.secondary-nav {
   margin-top: 2em;
 }
 
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the navba with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+
 .hero {
   text-align: center;
   color: #fff;
@@ -139,13 +156,18 @@ nav.menu-btn ul.secondary-nav {
   color: var(--primary-color);
 }
 
+.about .container p {
+  font-size: 0.95rem;
+  line-height: 1.2rem;
+}
+
 .about .container p:nth-last-of-type(1) {
   padding-bottom: 2em;
 }
 
 .about .container a.view-res {
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   padding: 0.85em 1.5em;
   background-color: var(--primary-color);
@@ -224,140 +246,118 @@ nav.menu-btn ul.secondary-nav {
   line-height: 1.2rem;
 }
 
-.portfolio .portfolio-items {
-  max-width: 100rem;
-  margin-left: auto;
-  margin-right: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+.portfolio .project-list {
+  margin-top: 4em;
+  margin-bottom: 3.5em;
 }
 
-.portfolio .port-item:nth-child(1):before {
-  background-image: url("https://res.cloudinary.com/kemkem-dev/image/upload/c_fit,h_600,w_600/v1601063618/portfolio/new-port-2_uwgpl.jpg");
-}
-
-.portfolio .port-item:nth-child(2):before {
-  background-image: url("https://res.cloudinary.com/kemkem-dev/image/upload/c_fit,h_600,w_600/v1601063618/portfolio/new-port-1_fdfou.jpg");
-}
-
-.portfolio .port-item:nth-child(3):before {
-  background-image: url("https://res.cloudinary.com/kemkem-dev/image/upload/c_fit,h_600,w_600/v1601063627/portfolio/new-port-3_cxj8l.jpg");
-}
-
-.portfolio .port-item {
-  width: 240rem;
-  position: relative;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px, rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
-          box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px, rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
-  height: 31.25rem;
-  overflow: hidden;
-  border-radius: 5px;
-  -webkit-transition: all 1s ease 0s;
-  transition: all 1s ease 0s;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 20rem;
-          flex: 0 1 20rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-bottom: 2.6rem;
-}
-
-.portfolio .port-item::before {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  content: "";
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  opacity: 1;
-  background-size: cover;
-  background-color: #0f0d16;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-transition: all 0.5s ease-in 0s;
-  transition: all 0.5s ease-in 0s;
-  background-position: 50% center;
-  background-repeat: no-repeat;
-}
-
-.portfolio .port-item:hover::before {
-  opacity: 0;
-  -webkit-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
-}
-
-.portfolio .wrapper {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: block;
-}
-
-.portfolio .wrapper::before,
-.portfolio .wrapper::after {
-  content: "";
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  opacity: 0.9;
-  -webkit-transition: all 0.6s ease 0s;
-  transition: all 0.6s ease 0s;
-}
-
-.portfolio .wrapper::before {
-  -webkit-transform: skew(30deg) translateX(125%);
-          transform: skew(30deg) translateX(125%);
-}
-
-.portfolio .wrapper::after {
-  -webkit-transform: skew(30deg) translateX(-125%);
-          transform: skew(30deg) translateX(-125%);
-}
-
-.portfolio .card {
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+.portfolio .project-item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 170px 1fr;
+      grid-template-columns: 1fr 170px 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-  position: relative;
-  opacity: 0;
-  color: white;
-  padding: 1rem 10px;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  -ms-flex-align: center;
+      align-items: center;
+  margin-bottom: 4em;
 }
 
-.portfolio .card:hover {
+.portfolio .project-wrap {
+  padding: 50px;
+  background-color: #444343;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 10px;
+          box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 10px;
+  border-radius: 10px;
+  min-height: 350px;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: 1 / 1 / auto / 3;
+}
+
+.portfolio .project-wrap .project-container {
+  width: 75%;
+  text-align: left;
+}
+
+.portfolio .project-wrap h3 {
+  margin-bottom: 25px;
+  margin: 10px 0px;
+  line-height: 140%;
+  color: #f8f8f8;
+}
+
+.portfolio .project-wrap p {
+  line-height: 170%;
+  min-height: 250px;
+}
+
+.portfolio .project-wrap .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+      align-items: center;
+  margin: 20px 0px 0px;
+}
+
+.portfolio .project-wrap .links a {
+  text-decoration: none;
+  background: #007af3;
+  color: #f8f8f8;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+  width: auto;
+  height: auto;
+  font-size: 12px;
+  margin: 0px;
+  padding: 12px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.portfolio .project-pic {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: 1 / 2 / auto / 4;
+  position: relative;
+  right: -20px;
+}
+
+.portfolio .project-pic .image {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+  background-color: #303030;
+  border-radius: 10px;
+}
+
+.portfolio .project-pic .image iframe {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border: 0px;
+  border-radius: 10px;
   opacity: 1;
-  -webkit-transition: all 0.6s ease 0.2s;
-  transition: all 0.6s ease 0.2s;
+}
+
+.portfolio .project-pic .stack {
+  margin: 10px;
+  color: #007af3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 24px;
+}
+
+.portfolio .project-pic .stack img {
+  margin-right: 25px;
 }
 
 .portfolio .view-more-btn {
@@ -368,7 +368,7 @@ nav.menu-btn ul.secondary-nav {
   background: #fff;
   color: var(--primary-color);
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   padding: 0.85em 1.5em;
   border-radius: 25px;
@@ -608,7 +608,8 @@ footer.footer .container .socials img {
     text-align: left;
   }
   .hero .container .left-col h1 {
-    font-size: 3em;
+    font-size: 3rem;
+    line-height: 3.625rem;
     width: 90%;
   }
   .hero .container .hero-img-mobile {
@@ -654,6 +655,34 @@ footer.footer .container .socials img {
   }
   .contact-me .name .last-name {
     padding-left: 0.75rem;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .portfolio .project-wrap {
+    min-height: unset;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1 / 4;
+    grid-row: unset;
+    padding: 30px;
+  }
+  .portfolio .project-container {
+    width: 100% !important;
+    text-align: left;
+  }
+  .portfolio .project-container p {
+    min-height: unset;
+  }
+  .portfolio .project-pic {
+    right: 0px;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1 / 4;
+    margin-bottom: 20px;
+  }
+  .portfolio .project-pic .stack {
+    display: none;
   }
 }
 /*# sourceMappingURL=main.css.map */

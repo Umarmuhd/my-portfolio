@@ -213,7 +213,7 @@
             <h1>Umar Muhammad</h1>
             <p class="role">Frontend Developer</p>
             <p class="brief">
-              I create fast and responsive web apps/ websites with passion
+              I create fast and responsive web apps/ websites with passion👇
             </p>
           </div>
           <img src="/images/umar.jpg" alt="umar muhammad" class="hero-img" />
@@ -296,7 +296,7 @@
           the other public repositories
         </p>
 
-        <div class="d-flex portfolio-items">
+        <!-- <div class="d-flex portfolio-items">
           <div class="port-item">
             <div class="wrapper">
               <div class="card">
@@ -342,6 +342,129 @@
                   <h4>Stack</h4>
                   <p>React Js, Bootstrap 4, CSS 3, Axios, NodeJS, Express JS</p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="project-list">
+          <div class="project-item">
+            <div class="project-wrap">
+              <div class="project-container">
+                <h3>Github Readme Stats</h3>
+                <p>
+                  Github Readme Stats dynamically generates stats for github
+                  user's readmes, After github launched it's profile readme
+                  feature I thought I would do something unique and dynamic with
+                  new readme resumes so I made github-readme-stats which is now
+                  used by many people and got over 1k stars on github within 7
+                  days, and currently it has over 10k stars. it has few cool
+                  features including `Github Extra Pins` which allows us to pin
+                  more that 6 repos in our profile.
+                </p>
+                <div class="links d-flex">
+                  <a href="#">Case Study</a>
+                  <a href="#">Live Demo</a>
+                  <a href="#"
+                    ><img src="/images/git.svg" alt="github link"
+                  /></a>
+                </div>
+              </div>
+            </div>
+            <div class="project-pic">
+              <div class="image">
+                <iframe
+                  src="/images/design.png"
+                  frameborder="0"
+                  allowfullscreen
+                  __idm_frm__="353"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope"
+                ></iframe>
+              </div>
+              <div class="d-flex stack">
+                <img src="/images/javascript.svg" alt="js" />
+                <img src="/images/html.svg" alt="html" />
+                <img src="/images/css.svg" alt="css" />
+              </div>
+            </div>
+          </div>
+          <div class="project-item">
+            <div class="project-wrap">
+              <div class="project-container">
+                <h3>Github Readme Stats</h3>
+                <p>
+                  Github Readme Stats dynamically generates stats for github
+                  user's readmes, After github launched it's profile readme
+                  feature I thought I would do something unique and dynamic with
+                  new readme resumes so I made github-readme-stats which is now
+                  used by many people and got over 1k stars on github within 7
+                  days, and currently it has over 10k stars. it has few cool
+                  features including `Github Extra Pins` which allows us to pin
+                  more that 6 repos in our profile.
+                </p>
+                <div class="links d-flex">
+                  <a href="#">Case Study</a>
+                  <a href="#">Live Demo</a>
+                  <a href="#"
+                    ><img src="/images/git.svg" alt="github link"
+                  /></a>
+                </div>
+              </div>
+            </div>
+            <div class="project-pic">
+              <div class="image">
+                <iframe
+                  src="/images/design.png"
+                  frameborder="0"
+                  allowfullscreen
+                  __idm_frm__="353"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope"
+                ></iframe>
+              </div>
+              <div class="d-flex stack">
+                <img src="/images/javascript.svg" alt="js" />
+                <img src="/images/html.svg" alt="html" />
+                <img src="/images/css.svg" alt="css" />
+              </div>
+            </div>
+          </div>
+          <div class="project-item">
+            <div class="project-wrap">
+              <div class="project-container">
+                <h3>Github Readme Stats</h3>
+                <p>
+                  Github Readme Stats dynamically generates stats for github
+                  user's readmes, After github launched it's profile readme
+                  feature I thought I would do something unique and dynamic with
+                  new readme resumes so I made github-readme-stats which is now
+                  used by many people and got over 1k stars on github within 7
+                  days, and currently it has over 10k stars. it has few cool
+                  features including `Github Extra Pins` which allows us to pin
+                  more that 6 repos in our profile.
+                </p>
+                <div class="links d-flex">
+                  <a href="#">Case Study</a>
+                  <a href="#">Live Demo</a>
+                  <a href="#"
+                    ><img src="/images/git.svg" alt="github link"
+                  /></a>
+                </div>
+              </div>
+            </div>
+            <div class="project-pic">
+              <div class="image">
+                <iframe
+                  src="/images/design.png"
+                  frameborder="0"
+                  allowfullscreen
+                  __idm_frm__="353"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope"
+                ></iframe>
+              </div>
+              <div class="d-flex stack">
+                <img src="/images/javascript.svg" alt="js" />
+                <img src="/images/html.svg" alt="html" />
+                <img src="/images/css.svg" alt="css" />
               </div>
             </div>
           </div>
@@ -423,6 +546,15 @@
       const mobileBtn = document.getElementById("mobileCta");
       const nav = document.querySelector("nav");
       const mobileBtnExit = document.getElementById("mobile-exit");
+      // Get the navbar
+      var navbar = document.getElementById("navbar");
+      // Get the offset position of the navbar
+      var sticky = navbar.offsetTop;
+
+      // When the user scrolls the page, execute myFunction
+      window.onscroll = function () {
+        myFunction();
+      };
 
       mobileBtn.addEventListener("click", () => {
         nav.classList.add("menu-btn");
@@ -431,6 +563,15 @@
       mobileBtnExit.addEventListener("click", () => {
         nav.classList.remove("menu-btn");
       });
+
+      // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
     </script>
   </body>
 </html>
