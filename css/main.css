@@ -339,17 +339,17 @@ nav.menu-btn ul.secondary-nav {
 }
 
 .portfolio .port-item:nth-child(1):before {
-  background-image: url("/images/design.png");
+  background-image: url("/images/squiry.png");
   background-size: contain;
 }
 
 .portfolio .port-item:nth-child(2):before {
-  background-image: url("/images/github.png");
+  background-image: url("/images/design.png");
   background-size: contain;
 }
 
 .portfolio .port-item:nth-child(3):before {
-  background-image: url("/images/design.png");
+  background-image: url("/images/teech.png");
   background-size: contain;
 }
 

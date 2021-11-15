@@ -21,7 +21,6 @@ header::after {
   content: "";
   background-color: hsl(20, 20%, 30%);
   background: url("/images/prism.png");
-  // background-size: cover;
 }
 
 header::before {
@@ -312,15 +311,15 @@ $animationSpeed: 40s;
   }
 
   .port-item:nth-child(1):before {
-    background-image: url("/images/design.png");
+    background-image: url("/images/squiry.png");
     background-size: contain;
   }
   .port-item:nth-child(2):before {
-    background-image: url("/images/github.png");
+    background-image: url("/images/design.png");
     background-size: contain;
   }
   .port-item:nth-child(3):before {
-    background-image: url("/images/design.png");
+    background-image: url("/images/teech.png");
     background-size: contain;
   }
 
