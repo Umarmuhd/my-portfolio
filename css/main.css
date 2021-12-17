@@ -25,7 +25,7 @@ header::after {
 header::before {
   position: fixed;
   width: 100%;
-  z-index: -1;
+  z-index: 100;
 }
 
 header::after {
@@ -334,8 +334,9 @@ nav.menu-btn ul.secondary-nav {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .portfolio .port-item:nth-child(1):before {
@@ -502,7 +503,7 @@ nav.menu-btn ul.secondary-nav {
   display: inline-block;
   font-size: 18px;
   text-align: center;
-  padding: 10px;
+  padding: 15px;
   margin: 0px;
   border-radius: 50%;
   -webkit-transition: all 0.2s ease 0s;
@@ -516,6 +517,63 @@ nav.menu-btn ul.secondary-nav {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.portfolio .more-projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.portfolio .more-projects .project-card {
+  background: #444343;
+  padding: 1.5rem;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+}
+
+.portfolio .more-projects header {
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.portfolio .more-projects .icon-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.portfolio .more-projects .icon-header a {
+  color: var(--text-primary-color);
+  margin-left: 0.7rem;
+  font-size: 1.1rem;
+}
+
+.portfolio .more-projects .icon-header a:hover {
+  color: var(--primary-color);
+}
+
+.portfolio .more-projects ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.portfolio .more-projects li {
+  margin-right: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--primary-color);
 }
 
 .portfolio .view-more-btn {
@@ -738,6 +796,17 @@ footer.footer .container .socials img {
     background: var(--primary-color);
     color: white;
   }
+  .more-projects {
+    display: -ms-grid !important;
+    display: grid !important;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .more-projects .project-card {
+    margin-bottom: 0;
+  }
   footer.footer {
     min-height: 10rem;
   }
@@ -746,6 +815,15 @@ footer.footer .container .socials img {
     -webkit-box-direction: unset !important;
         -ms-flex-direction: unset !important;
             flex-direction: unset !important;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .port-item {
+    width: 100% !important;
+    -webkit-box-flex: 0 !important;
+        -ms-flex: none !important;
+            flex: none !important;
   }
 }
 
